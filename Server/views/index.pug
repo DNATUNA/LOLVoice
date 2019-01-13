@@ -1,0 +1,93 @@
+extends layout
+
+block content
+  doctype html
+  html(lang='en')
+    head
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      // Bootstrap
+      style.
+        body{
+        font-family: "맑은 고딕";
+        background-color: #662259;
+        }
+        img.header{
+        display: block;
+        margin-top: 200px;
+        }
+        .box {
+        height: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #ccc;
+        margin-bottom: 100px;
+        background-color: #F2F2F2;
+        }
+        .form-login{
+        margin-top: 90px;
+        }
+        .form-loginID{
+        display: block;
+        margin-bottom: 20px;
+        }
+        .form-loginpassword{
+        margin-bottom: 40px;
+        }
+        .form-summoner{
+        margin-top: 100px;
+        }
+        .form-searchset{
+        margin-top: 5px;
+        }
+      // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+      // WARNING: Respond.js doesn't work if you view the page via file://
+      //if lt IE 9
+        script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+        script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+    body
+      // 메인화면 첫 이미지
+      .container
+        .col-md-9.col-md-offset-3
+          img.header(src='/public/img/main picture.png')
+      // 로그인 박스 & 소환사 이름 검색 박스
+      .container
+        // 로그인 박스
+        .col-md-5.col-md-offset-1
+          section.box
+            // 아이디 비밀번호 양식
+            form.form-login(action='/login', method='post')
+              .form-loginID
+                label.col-xs-3.col-lg-3.control-label(for='ID') 아이디
+                .col-xs-8.col-lg-8
+                  input.form-control(type='text', name='username', placeholder='아이디')
+                br
+              .form-loginpassword
+                label.col-xs-3.col-lg-3.control-label(for='passward') 비밀번호
+                .col-xs-8.co.vl-lg-8
+                  input.form-control(type='password', name='password' placeholder='●●●●')
+              .form-loginsubmit
+                br
+                .col-xs-offset-3.col-xs-3.col-lg-offset-3.col-lg-3
+                  button.btn.btn-danger(type='submit') 로그인
+                .col-xs-pull-1.col-xs-3.col-lg-pull-1.col-lg-3
+                  .col-xs-pull-4.col-xs-3.col-lg-pull-1.col-lg-3
+                    a(href='#')
+                      button.btn.btn-danger(type='button') 회원가입
+        // 소환사 검색 박스
+        .col-md-5
+          section.box
+            form.form-summoner(role='form')
+              .form-summonername
+                label.col-xs-4.col-lg-4.control-label(for='summonername') 소환사 명
+                .col-xs-12.col-lg-12
+                  input.form-control(type='text', placeholder='소환사 명')
+              .form-search
+                .col-xs-3.col-lg-3
+                  .form-searchset
+                    button.btn.btn-danger(type='submit') 검색
+      // jQuery (necessary for Bootstrap's JavaScript plugins)
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+      // Include all compiled plugins (below), or include individual files as needed

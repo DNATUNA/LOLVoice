@@ -1,0 +1,83 @@
+extends layout
+
+block content
+  html
+    html(lang='en')
+      head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        // Bootstrap
+      link(rel='stylesheet', type='text/css', href='https://lolvoice.run.goorm.io/easyrtc/easyrtc.css')
+      // hide
+      link(rel='stylesheet', type='text/css', href='/demos/css/landing.css')
+      // Prettify Code
+      script(type='text/javascript', src='/demos/js/prettify/prettify.js')
+      script(type='text/javascript', src='/demos/js/prettify/loadAndFilter.js')
+      script(type='text/javascript', src='/demos/js/prettify/jquery.min.js')
+      link(rel='stylesheet', type='text/css', href='/demos/js/prettify/prettify.css')
+      // show
+      // Assumes global locations for socket.io.js and easyrtc.js
+      script(src='/socket.io/socket.io.js')
+      script(type='text/javascript', src='https://lolvoice.run.goorm.io/easyrtc/easyrtc.js')
+      script(type='text/javascript', src='/demos/js/demo_audio_only.js')
+      // hide
+      // Styles used within the demo
+      style(type='text/css').
+        #demoContainer {
+        position:relative;
+        }
+        #connectControls {
+        float:left;
+        width:250px;
+        text-align:center;
+        border: 2px solid black;
+        }
+        #otherClients {
+        height:200px;
+        overflow-y:scroll;
+        }
+        #callerAudio {
+        /* display:none; */
+        height:10em;
+        width:10em;
+        margin-left:10px;
+        }
+        #acceptCallBox {
+        display:none;
+        z-index:2;
+        position:absolute;
+        top:100px;
+        left:400px;
+        border:red solid 2px;
+        background-color:pink;
+        padding:15px;
+        }
+      // show
+    body
+      #container
+        // hide
+        #header
+        
+        #menu
+      
+        #main
+          // show
+          #demoContainer
+            #connectControls
+              button#connectButton(onclick='connect()') Connect
+              button#hangupButton(disabled='disabled', onclick='hangup()') Hangup
+              #iam Not yet connected...
+              br
+              strong Connected users:
+              #otherClients
+            // Note... this demo should be updated to remove video references
+            #videos
+              video#callerAudio
+              #acceptCallBox
+                // Should be initially hidden using CSS
+                #acceptCallLabel
+                button#callAcceptButton Accept
+                button#callRejectButton Reject
+  
+      // show
