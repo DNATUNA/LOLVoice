@@ -13,7 +13,8 @@ Intor Project
    - groom.io에서 voice서버가 돌아갑니다.
    - Local에서 Main서버가 돌아갑니다.
  - 최대 5인 다자간 대화를 구현하려고 했으나 실패했습니다.
- - 2018년 부터 롤 클라이언트에 보이스 기능이 추가되었으므로 추가 개발 계획은 없습니다.
+ - ~~2018년 부터 롤 클라이언트에 보이스 기능이 추가되었으므로 추가 개발 계획은 없습니다.~~
+    - 추가 개발했습니다. --> [Gamp](https://github.com/junction-hippy/junction_hippy_back)
  
  # 
 Made by **DNATUNA** <br>
